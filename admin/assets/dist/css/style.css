@@ -1,0 +1,86 @@
+label.blk {
+    border: 2px solid #1ABB9C;
+    background: transparent;
+}
+.chair_row label {
+    border: 2px solid #1ABB9C;
+    border-radius: 5px;
+    padding: 4px 8px;
+    cursor: pointer;
+    min-height: 20px;
+    cursor: pointer;
+}
+.chair_row input[type=checkbox] {
+    position: absolute;
+    margin: -1px -5px -3px;
+    opacity: 0.03;
+}
+label.disb {
+    border: 1px solid #f8f8f8;
+    background: #c4c4c4;
+}
+.class_type {
+    background: #60baa7 none repeat scroll 0 0;
+    text-align: center;
+    margin: 0;
+    padding: 5px;
+}
+.preview_main{
+	overflow-x: scroll;
+}
+.preview label.disb {
+    opacity: 0;
+}
+.sign_in_error{
+    color: red;
+    font-size: 15px;
+    text-align: center;
+}
+.eye{
+      width: 50%;
+    text-align: center;
+    color: red;
+    margin: 0 auto;
+    height: 30px;
+    background-color: (195, 185, 185, 0.21);
+    padding-top: 6px;
+    margin-bottom: 10px;
+}
+.x_content{
+        width: 100% !important;
+    overflow-y: hidden;
+}
+.user_image{
+     background: url(../img/avatar6.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width:35px;
+    height:35px;
+}
+.img_circle{
+         background: url(../img/avatar6.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width:35px !important;
+    height:35px !important;
+}
+.row_name {
+    width: 50px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 50px;
+}
+td.disabled.day {
+    color: #ddd !important;
+}
+.navbar-nav>.user-menu>.dropdown-menu>li.user-header.user_header{
+    height: 45px;
+}
+@media (min-width: 1920px){
+.bootstrap-timepicker-widget.dropdown-menu.open {
+    left: 133px;
+}
+}

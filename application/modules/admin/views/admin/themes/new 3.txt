@@ -1,0 +1,45 @@
+SELECT `b`.`id` as `bus_id`, `j`.`totel_seat`, `j`.`layout`, `a`.`id` as `route_id`, `b`.`bus_name`,
+ `a`.`board_point`, `a`.`drop_point`, `a`.`fare`, `a`.`board_time`, `a`.`drop_time`, `d`.`bus_type`,
+ `h`.`cancel_time`, `h`.`percentage`, `h`.`flat`, `h`.`type`, `i`.`bus_quality`, `i`.`punctuality`, `i`.
+`Staff_behaviour`, GROUP_CONCAT(  DISTINCT (CONCAT_WS ("<
+#>", `c`.`pickup_point`, `c`.`pickup_time`, `c`.`landmark`, `c`.`address`, c.id)) SEPARATOR " <=> ")
+ as points, GROUP_CONCAT(DISTINCT (CONCAT_WS ("<#>",`g`.`stoping_point`,`g`.`drop_time`,`g`.
+`landmark`, g.address)) SEPARATOR " <=> ") as droppoints, GROUP_CONCAT(  DISTINCT (CONCAT_WS ("<#>", e.image)
+) SEPARATOR " <=> ") as gallery
+FROM `route` `a`
+LEFT JOIN `bus` `b` ON `a`.`bus_id`=`b`.`id`
+LEFT JOIN `bus_type` `d` ON `d`.`id`=`b`.`bus_type_id`
+LEFT JOIN `cancellation` `h` ON `h`.`bus_id`=`b`.`id`
+LEFT JOIN `seat_layout` `j` ON `j`.`bus_id`=`b`.`id`
+LEFT JOIN `rating` `i` ON `i`.`bus_id`=`b`.`id`
+LEFT JOIN `board_points` `c` ON `c`.`board_point`=`a`.`id`
+LEFT JOIN `drop_points` `g` ON `g`.`drop_point`=`a`.`id`
+LEFT JOIN `bus_gallery` `e` ON `e`.`bus_id`=`b`.`id`
+WHERE `a`.`board_point` = 'Vazhakkala'
+AND `a`.`drop_point` = 'kallore'
+AND `b`.`bus_status` = '1'
+GROUP BY `b`.`id`
+
+
+
+
+
+
+
+
+
+
+
+
+LEFT JOIN `booking_details` `k` ON `k`.`bus_id`=`b`.`id`
+
+LEFT JOIN `amenities` `f` ON `FIND_IN_SET`(f.id,b.amenities_id) > 0
+
+
+
+
+, GROUP_CONCAT(  DISTINCT (CONCAT_WS ("<#>", f.amenities)) SEPARATOR "
+ <=> ") as amenities, ROUND(AVG(i.average), 1) AS AvgPrice
+
+
+SELECT bus.id,bus.bus_name,route.id AS route_id FROM bus LEFT JOIN route ON route.bus_id = bus.id WHERE bus.bus_status = '1'

@@ -1,0 +1,1 @@
+var baseurl = "http://192.168.138.31/TRAINEES/Jensa/ticketbazzar/";
